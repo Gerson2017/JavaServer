@@ -2,13 +2,18 @@ package com.bycw;
 
 import com.bycw.logtest.TestLogger;
 import com.bycw.netty.NettySocketServer;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import com.bycw.jprotobuf.JProtoBufWrapper;
 import com.bytw.utils.*;
 
 
 public class Main {
 	public static void main(String args[]) {
-		// TestLogger loggerTest = new TestLogger();
+		Logger m_logger=LoggerFactory.getLogger(Main.class);
+		
 		
 		// loggerTest.testLog4jLog();		
 		// loggerTest.testSlf4jLog();
@@ -19,6 +24,20 @@ public class Main {
 //		catch(Exception e) {
 //			
 //		}
+		Timer mtimer=new Timer("MyTimer");
+		
+		mtimer.schedule(()->{
+			m_logger.info("shot time");
+		}, 1000);
+		
+		mtimer.schedule(() -> {
+	    	m_logger.info("long task");
+        }, 5000);
+
+		mtimer.scheduleAtFixedRate(() -> {
+        	m_logger.info("frame task");
+        }, 0, 1000);
+		
 		
 		JProtoBufWrapper m_jProtoBufWrapper=new JProtoBufWrapper();
 		m_jProtoBufWrapper.TestProtoBuf();
