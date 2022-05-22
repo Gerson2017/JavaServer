@@ -23,7 +23,7 @@
 				<group>DEFAULT</group>
 				<job-name>DailyResetJob</job-name>
 				<job-group>DEFAULT</job-group>
-				<cron-expression>0 35 17 * * ?</cron-expression>
+				<cron-expression>0 59 15 * * ?</cron-expression>
 				<!-- 每天05:00运行 -->
 			</cron>
 		</trigger>

@@ -6,11 +6,13 @@ import com.bycw.netty.NettySocketServer;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 
+import org.quartz.SchedulerException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import com.bycw.database.JDBCWrapper;
 import com.bycw.database.RedisCluster;
+import com.bycw.jobs.CronSchedulerHelper;
 import com.bycw.jprotobuf.JProtoBufWrapper;
 import com.bytw.anotation.TestAnnotation;
 import com.bytw.reflect.Reflect;
@@ -78,6 +80,19 @@ public class Main {
 		
 		//反射
 		//TestRelfect();
+		
+		//Job
+		try {
+			CronSchedulerHelper.initAndStart();
+		}catch(SchedulerException e) {
+			m_logger.info("error" + e.toString());
+		}
+		
+		try {
+			new NettySocketServer().startServer(6080);
+		}
+		catch(Exception e) {
+		}
 	}
 	
 	//字段 方法获取
