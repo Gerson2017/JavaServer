@@ -12,6 +12,7 @@ import org.slf4j.LoggerFactory;
 
 import com.bycw.database.JDBCWrapper;
 import com.bycw.database.RedisCluster;
+import com.bycw.http.HttpServer;
 import com.bycw.jobs.CronSchedulerHelper;
 import com.bycw.jprotobuf.JProtoBufWrapper;
 import com.bytw.anotation.TestAnnotation;
@@ -94,6 +95,12 @@ public class Main {
 //		catch(Exception e) {
 //		}
 		
+		try {
+			 new HttpServer().start();
+		} catch (Exception e) {
+			m_logger.error(e.getMessage());
+			// TODO: handle exception
+		}
 	
 	}
 	
