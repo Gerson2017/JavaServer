@@ -82,17 +82,19 @@ public class Main {
 		//TestRelfect();
 		
 		//Job
-		try {
-			CronSchedulerHelper.initAndStart();
-		}catch(SchedulerException e) {
-			m_logger.info("error" + e.toString());
-		}
+//		try {
+//			CronSchedulerHelper.initAndStart();
+//		}catch(SchedulerException e) {
+//			m_logger.info("error" + e.toString());
+//		}
+//		
+//		try {
+//			new NettySocketServer().startServer(6080);
+//		}
+//		catch(Exception e) {
+//		}
 		
-		try {
-			new NettySocketServer().startServer(6080);
-		}
-		catch(Exception e) {
-		}
+	
 	}
 	
 	//字段 方法获取
