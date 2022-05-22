@@ -12,7 +12,6 @@ import org.slf4j.LoggerFactory;
 
 import com.bycw.database.JDBCWrapper;
 import com.bycw.database.RedisCluster;
-import com.bycw.http.HttpCommandManager;
 import com.bycw.jobs.CronSchedulerHelper;
 import com.bycw.jprotobuf.JProtoBufWrapper;
 import com.bytw.anotation.TestAnnotation;
@@ -95,16 +94,7 @@ public class Main {
 //		catch(Exception e) {
 //		}
 		
-		//http
-//		try {
-//			HttpUtil.main(new String[] {"aa"});
-//			
-//		} catch (Exception e) {
-//			// TODO: handle exception
-//		}
-		
-		
-		HttpCommandManager.getInstance().initialize("com.bycw.http.CommandHandler");
+	
 	}
 	
 	//字段 方法获取
