@@ -7,7 +7,9 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import com.bycw.database.JDBCWrapper;
+import com.bycw.database.RedisCluster;
 import com.bycw.jprotobuf.JProtoBufWrapper;
+import com.bytw.anotation.TestAnnotation;
 import com.bytw.utils.*;
 
 
@@ -51,11 +53,22 @@ public class Main {
 //		PropertiesUtil propertiesUtil=new PropertiesUtil();
 //		propertiesUtil.TestProperies();
 		
-		EncyptWrapper md5wrapper=new EncyptWrapper();
-		md5wrapper.TestEncyptWrapper();
+//		EncyptWrapper md5wrapper=new EncyptWrapper();
+//		md5wrapper.TestEncyptWrapper();
+//		
+//		//MySql
+//		JDBCWrapper jdbcWrapper=new JDBCWrapper();
+//		jdbcWrapper.TestJDBCWrapper();
 		
-		JDBCWrapper jdbcWrapper=new JDBCWrapper();
-		jdbcWrapper.TestJDBCWrapper();
+		//Redis
+//		RedisCluster redisclient=new RedisCluster();
+//		redisclient.Init();
+//		redisclient.TestRedis();
+//		redisclient.Destory();
+		
+		//Anotation
+		TestAnnotation aniAnotation=new TestAnnotation();
+		aniAnotation.TestAnotatonUse();
 		
 	}
 }
